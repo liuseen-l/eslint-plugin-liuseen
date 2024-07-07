@@ -1,0 +1,68 @@
+{
+  "name": "eslint-plugin-liuseen",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@9.4.0",
+  "description": "liuseen-l extended ESLint rules",
+  "author": "liuseen-l",
+  "funding": "https://github.com/sponsors/liuseen-l",
+  "homepage": "https://github.com/liuseen/eslint-plugin-liuseen#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuseen/eslint-plugin-liuseen.git"
+  },
+  "bugs": "https://github.com/liuseen/eslint-plugin-liuseen/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "pnpm run dev && eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepare": "simple-git-hooks"
+  },
+  "peerDependencies": {
+    "eslint": ">= 9"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/eslint": "^8.56.10",
+    "@typescript-eslint/utils": "^7.15.0",
+    "bumpp": "^9.4.1",
+    "eslint": "^9.6.0",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.5.3",
+    "unbuild": "^2.0.0",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "^7.15.0",
+    "eslint-vitest-rule-tester": "^0.3.2"
+  },
+  "resolutions": {
+    "eslint-plugin-liuseen": "workspace:*"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
