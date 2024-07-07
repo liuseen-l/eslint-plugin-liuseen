@@ -6,14 +6,14 @@ export type MessageIds = 'noCnVars'
 export type Options = []
 
 function isIdentifyWithCN(i: string) {
-  return /[u4E00]-[u9FA5]+/g.test(i)
+  return /[\u4e00-\u9fa5]+/g.test(i)
 }
 
 export default createEslintRule<Options, MessageIds>({
   name: RULE_NAME,
   // official
   meta: {
-    type: 'layout',
+    type: 'problem',
     docs: {
       description: '判断声明是否用了中文',
     },

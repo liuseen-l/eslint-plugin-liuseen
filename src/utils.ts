@@ -2,12 +2,7 @@ import type { RuleListener, RuleWithMeta, RuleWithMetaAndName } from '@typescrip
 import type { RuleContext } from '@typescript-eslint/utils/ts-eslint'
 import type { Rule } from 'eslint'
 
-const hasDocs = [
-  'consistent-list-newline',
-  'if-newline',
-  'import-dedupe',
-  'top-level-function',
-]
+const hasDocs:string[] = []
 
 const blobUrl = 'https://github.com/liuseen-L/eslint-plugin-liuseen-l/blob/main/src/rules/'
 
@@ -47,7 +42,6 @@ function createRule<
 }
 
 
-
 export function createEslintRule<
   TOptions extends readonly unknown[],
   TMessageIds extends string,
@@ -66,14 +60,4 @@ export function createEslintRule<
     },
     ...rule,
   })
-}
-
-
-const warned = new Set<string>()
-
-export function warnOnce(message: string) {
-  if (warned.has(message))
-    return
-  warned.add(message)
-  // console.warn(message)
 }

@@ -1,10 +1,11 @@
 import type { ESLint, Linter } from 'eslint'
 import { version, } from '../package.json'
 import noCnVars from './rules/no-cn-vars'
+import tsParser from '@typescript-eslint/parser'
 
-const _plugin = {
+const plugin = {
   meta: {
-    name: 'liuseen',
+    name: 'eslint-plugin-liuseen',
     version,
   },
   rules: {
@@ -14,22 +15,16 @@ const _plugin = {
 } satisfies ESLint.Plugin
 
 
-const plugin = Object.assign(_plugin.configs, {
-  recommended: [{
+Object.assign(plugin.configs, {
+  recommended: {
     plugins: {
-      'eslint-plugin-liuseen': _plugin
+      'eslint-plugin-liuseen': plugin
     },
     rules: {
       "eslint-plugin-liuseen/no-cn-vars": "error"
     },
-    languageOptions: {
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true
-        }
-      }
-    }
-  }]
+   
+  }
 } as ESLint.Plugin['configs'])
 
 export default plugin
