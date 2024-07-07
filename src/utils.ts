@@ -4,7 +4,7 @@ import type { Rule } from 'eslint'
 
 const hasDocs:string[] = []
 
-const blobUrl = 'https://github.com/liuseen-L/eslint-plugin-liuseen-l/blob/main/src/rules/'
+const blobUrl = 'https://github.com/liuseen-l/eslint-plugin-liuseen-l/blob/main/src/rules/'
 
 function genRuleDocUrl(ruleName: string) {
   return hasDocs.includes(ruleName) ? `${blobUrl}${ruleName}.md` : `${blobUrl}${ruleName}.test.ts`
