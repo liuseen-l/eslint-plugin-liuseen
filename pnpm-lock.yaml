@@ -15,6 +15,9 @@ importers:
         specifier: ^0.3.2
         version: 0.3.2(eslint@9.6.0)(typescript@5.5.3)(vitest@1.6.0)
     devDependencies:
+      '@antfu/ni':
+        specifier: ^0.21.12
+        version: 0.21.12
       '@types/eslint':
         specifier: ^8.56.10
         version: 8.56.10
@@ -51,6 +54,10 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
+
+  '@antfu/ni@0.21.12':
+    resolution: {integrity: sha512-2aDL3WUv8hMJb2L3r/PIQWsTLyq7RQr3v9xD16fiz6O8ys1xEyLhhTOv8gxtZvJiTzjTF5pHoArvRdesGL1DMQ==}
+    hasBin: true
 
   '@antfu/utils@0.7.10':
     resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
@@ -2040,6 +2047,8 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
+
+  '@antfu/ni@0.21.12': {}
 
   '@antfu/utils@0.7.10': {}
 
