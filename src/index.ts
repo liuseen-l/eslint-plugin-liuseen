@@ -1,7 +1,6 @@
 import type { ESLint, Linter } from 'eslint'
 import { version, } from '../package.json'
 import noCnVars from './rules/no-cn-vars'
-import tsParser from '@typescript-eslint/parser'
 
 const plugin = {
   meta: {
