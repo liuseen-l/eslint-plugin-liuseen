@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-liuseen",
   "type": "module",
-  "version": "0.0.1-beta.4",
+  "version": "0.0.1-beta.5",
   "packageManager": "pnpm@9.4.0",
   "description": "liuseen-l extended ESLint rules",
   "author": "liuseen-l",
